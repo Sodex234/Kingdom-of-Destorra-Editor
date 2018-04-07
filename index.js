@@ -6,8 +6,19 @@ const url = require("url");
 
 let win;
 
+var showDev = false;
+
 function createWindow() {
-	win = new BrowserWindow({width: 800, height: 600});
+	win = new BrowserWindow({
+		width: 800,
+		height: 600
+	});
+	
+	win.setMenu(null);
+	
+	if(showDev) {
+		win.webContents.openDevTools();
+	}
 	
 	win.loadURL(url.format({
 		pathname: path.join(__dirname, "index.html"),

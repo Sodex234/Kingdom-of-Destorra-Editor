@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Game Window</title>
+		<title>Kingdom of Destorra</title>
+		
+		<link rel="stylesheet" href="main.css" />
+		
+		<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+		
+		<!-- Libs !-->
+		<script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
+		
+		<!-- Game Scripts !-->
+		<script type="text/javascript" src="engine/gameManager.js"></script>
+		
+		<script>
+            if (window.module) 
+                module = window.module;
+            
+            const {ipcRenderer} = require('electron');
+        </script>
 	</head>
 	<body>
-		<h1>This is cool!</h1>
+		<canvas id="gameCanvas"></canvas>
 	</body>
 </html>
