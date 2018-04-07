@@ -4,7 +4,20 @@ var c = null;
 var WIDTH = 0;
 var HEIGHT = 0;
 
+var textureLoadList = [
+	{
+		name: "char1",
+		width: 300,
+		height: 250
+	}
+];
+
+var loadedTextures = {};
+var finishedLoadingTextures = false;
+
 $(document).ready(function() {
+	loadTextures();
+	
 	// Create the game window
 	canvas = document.getElementById("gameCanvas");
 	
@@ -27,8 +40,14 @@ function setSize() {
 }
 
 function draw() {
+	if(!finishedLoadingTextures) {
+		return;
+	}
+	
 	c.fillStyle = "red";
 	c.fillRect(0, 0, WIDTH, HEIGHT);
 	c.fillStyle = "white";
 	c.fillRect(WIDTH / 4, HEIGHT / 4, WIDTH / 2, HEIGHT / 2);
+	
+	c.drawImage(loadedTextures["char1"], 123, 123);
 }
