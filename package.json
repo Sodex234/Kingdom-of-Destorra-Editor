@@ -1,0 +1,25 @@
+{
+  "name": "kingdom-of-destorra-client",
+  "version": "1.0.0",
+  "description": "A 2D RPG Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sodex234/Kingdom-of-Destorra-Client.git"
+  },
+  "keywords": [
+    "Game"
+  ],
+  "author": "Scott Hiett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sodex234/Kingdom-of-Destorra-Client/issues"
+  },
+  "homepage": "https://github.com/Sodex234/Kingdom-of-Destorra-Client#readme",
+  "devDependencies": {
+    "electron": "^1.8.4"
+  }
+}
