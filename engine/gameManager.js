@@ -25,7 +25,13 @@ $(document).ready(function() {
 	
 	c = canvas.getContext("2d");
 	
-	setInterval(draw, 16);
+	setInterval(function() {
+		if(!finishedLoadingTextures) {
+			renderLoad();
+		} else {
+			render();
+		}
+	}, 16);
 });
 
 $(window).on("resize", function() {
@@ -37,17 +43,4 @@ function setSize() {
 	canvas.height = window.innerHeight;
 	WIDTH = canvas.width;
 	HEIGHT = canvas.height;
-}
-
-function draw() {
-	if(!finishedLoadingTextures) {
-		return;
-	}
-	
-	c.fillStyle = "red";
-	c.fillRect(0, 0, WIDTH, HEIGHT);
-	c.fillStyle = "white";
-	c.fillRect(WIDTH / 4, HEIGHT / 4, WIDTH / 2, HEIGHT / 2);
-	
-	c.drawImage(loadedTextures["char1"], 123, 123);
 }
