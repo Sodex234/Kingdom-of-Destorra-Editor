@@ -1,0 +1,15 @@
+{
+	"name": "Test Map",
+	"mapid": 1,
+	"author": "Scott Hiett",
+	"spawnlocs": [
+		{"locX": 5, "locY": 5},
+		{"locX": 10, "locY": 2}
+	],
+	"tiles": [
+		{
+			"id": 0,
+			"filename": "grass"
+		}
+	]
+}

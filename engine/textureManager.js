@@ -17,7 +17,7 @@ function loadTextures() {
 
 function loadTexture(texLoc, width, height, imgCallback) {
 	var img = new Image();
-	img.src = "art/" + texLoc + ".png";
+	img.src = texLoc;
 	
 	img.onload = function() {
 		console.log(img.naturalWidth + ", " + img.height);

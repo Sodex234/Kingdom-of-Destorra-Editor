@@ -6,7 +6,7 @@ var HEIGHT = 0;
 
 var textureLoadList = [
 	{
-		name: "char1",
+		name: "art/char1.png",
 		width: 300,
 		height: 250
 	}
@@ -16,7 +16,7 @@ var loadedTextures = {};
 var finishedLoadingTextures = false;
 
 $(document).ready(function() {
-	loadTextures();
+	loadMap("test"); // The map will load the textures in.
 	
 	// Create the game window
 	canvas = document.getElementById("gameCanvas");
