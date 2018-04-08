@@ -1,5 +1,5 @@
 function render() {
-	
+	// lets just draw the entire map to test
 }
 
 // Load Page //

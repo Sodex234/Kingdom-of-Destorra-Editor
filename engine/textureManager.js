@@ -20,7 +20,7 @@ function loadTexture(texLoc, width, height, imgCallback) {
 	img.src = texLoc;
 	
 	img.onload = function() {
-		console.log(img.naturalWidth + ", " + img.height);
+		console.log("Scaling texture " + texLoc + ".");
 
 		var smallCanvasParent = document.createElement("canvas");
 		smallCanvasParent.width = img.width;
