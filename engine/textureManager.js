@@ -1,3 +1,6 @@
+var loadedTextures = [];
+var finishedLoadingTextures = false;
+
 function loadTextures() {
 	var count = 0;
 	
@@ -6,10 +9,13 @@ function loadTextures() {
 			count++;
 			
 			// Save the texture
-			loadedTextures[unloadedTexture.name] = loadedTexture;
+			loadedTextures[unloadedTexture.id] = {image: loadedTexture, id: unloadedTexture.id};
 			
 			if(count === textureLoadList.length) {
 				finishedLoadingTextures = true;
+				
+				console.log("Finished loading textures. Finished array: ");
+				console.log(loadedTextures);
 			}
 		});
 	});

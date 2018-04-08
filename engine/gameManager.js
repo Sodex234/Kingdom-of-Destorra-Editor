@@ -8,12 +8,10 @@ var textureLoadList = [
 	{
 		name: "art/char1.png",
 		width: 300,
-		height: 250
+		height: 250,
+		id: 99
 	}
 ];
-
-var loadedTextures = {};
-var finishedLoadingTextures = false;
 
 $(document).ready(function() {
 	loadMap("test"); // The map will load the textures in.

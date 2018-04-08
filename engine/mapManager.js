@@ -14,7 +14,8 @@ function loadMap(mapName) {
 				{
 					name: "maps/" + mapName + "/tiles/" + tileObject.filename + ".png", 
 					width: 128, 
-					height: 128
+					height: 128,
+					id: tileObject.id
 				});
 		});
 		
@@ -33,7 +34,16 @@ function loadMap(mapName) {
 		lineByLine.forEach(function(mapLine) {
 			var lineData = mapLine.split(":");
 			
-			gameMap.push(parseInt(lineData));
+			lineData.forEach(function(mapLineItem) {
+				gameMap.push(parseInt(mapLineItem));
+			});
 		});
+		
+		console.log("Game map data:");
+		console.log(gameMap);
 	});
+}
+
+function getTileImage(x, y) {
+	return loadedTextures[gameMap[y * gameMapWidth + x]].image;
 }
