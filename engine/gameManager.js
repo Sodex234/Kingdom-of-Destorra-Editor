@@ -7,8 +7,8 @@ var HEIGHT = 0;
 var textureLoadList = [
 	{
 		name: "art/char1.png",
-		width: 300,
-		height: 250,
+		width: 128,
+		height: 128,
 		id: 99
 	}
 ];
