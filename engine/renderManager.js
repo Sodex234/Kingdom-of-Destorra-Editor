@@ -3,35 +3,8 @@ var tileSize = 128;
 var speed = 3;
 
 function render() {
-	if(pressedKeys[16]) {
-		speed = 5;
-	} else {
-		speed = 3;
-	}
-	
-	if(pressedKeys[87]) {
-		localPlayer.posY -= speed;
-	}
-	if(pressedKeys[83]) {
-		localPlayer.posY += speed;
-	}
-	if(pressedKeys[65]) {
-		localPlayer.posX -= speed;
-	}
-	if(pressedKeys[68]) {
-		localPlayer.posX += speed;
-	}
-	
 	c.fillStyle = "#272727";
 	c.fillRect(0, 0, WIDTH, HEIGHT);
-	
-	// lets just draw the entire map to test
-	/*for(var x = 0; x < gameMapWidth; x++) {
-		for(var y = 0; y < gameMapHeight; y++) {
-			// Draw this square
-			c.drawImage(getTileImage(x, y), x * 128, y * 128);
-		}
-	}*/
 	
 	var viewPortX = -(localPlayer.posX) + (WIDTH / 2);
 	var viewPortY = -(localPlayer.posY) + (HEIGHT / 2);
