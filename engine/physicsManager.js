@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	setInterval(physics, 1000 / 120);
+	setInterval(physics, 1000 / 500);
 });
 
 function physics() {
