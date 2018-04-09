@@ -4,12 +4,14 @@ var c = null;
 var WIDTH = 0;
 var HEIGHT = 0;
 
+var selectedTileId = 0;
+
 var textureLoadList = [
 	{
-		name: "art/char1.png",
+		name: "art/air.png",
 		width: 128,
 		height: 128,
-		id: 99
+		id: 0
 	}
 ];
 

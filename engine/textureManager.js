@@ -9,7 +9,7 @@ function loadTextures() {
 			count++;
 			
 			// Save the texture
-			loadedTextures[unloadedTexture.id] = {image: loadedTexture, id: unloadedTexture.id};
+			loadedTextures[unloadedTexture.id] = {image: loadedTexture, id: unloadedTexture.id, name: unloadedTexture.name};
 			
 			if(count === textureLoadList.length) {
 				finishedLoadingTextures = true;

@@ -47,9 +47,11 @@ function render() {
 	c.fillStyle = "white";
 	c.font = "30px sans-serif";
 	// Render on instructions
+	var selectedName = loadedTextures[selectedTileId].name;
+	
 	if(pressedKeys[70]) {
-		c.fillText("Press [Q] to set tile to selected tile", 10, 30);
-		c.fillText("Press [E] to set tile to air", 10, 60);
+		c.fillText("Press [E] to set tile to selected tile", 10, 30);
+		c.fillText("Press [Q] to set tile to air", 10, 60);
 		c.fillText("Press [R] to open tile manager", 10, 90);
 		c.fillText("Press [T] to save map", 10, 120);
 		c.fillText("Press [G] to start fresh", 10, 150);
@@ -59,10 +61,10 @@ function render() {
 		c.fillText("Hold [S] to move down", 10, 240);
 		c.fillText("Hold [D] to move right", 10, 270);
 		c.fillText("Hold [SHIFT] to fast-move", 10, 300);
-		c.fillText("Selected Tile: AIR", 10, 360);
+		c.fillText("Selected Tile: " + selectedName, 10, 360);
 	} else {
 		c.fillText("Hold [F] for key maps", 10, 30);
-		c.fillText("Selected Tile: AIR", 10, 90);
+		c.fillText("Selected Tile: " + selectedName, 10, 90);
 	}
 }
 

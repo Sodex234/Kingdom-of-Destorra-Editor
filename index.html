@@ -31,13 +31,14 @@
         </script>
 	</head>
 	<body>
-		<canvas id="gameCanvas"></canvas>
+		<canvas id="gameCanvas" class="gameCanvas" tabindex="1"></canvas>
 		
 		<!-- Boostrap !-->
 		<div class="modal fade tilemanager" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
-					<p><b>Tiles</b></p>
+					<h2 style='text-align: center;'>Tiles</h2>
+					<hr>
 					<div class="row tileitemcontainer">
 						<p>Loading...</p>
 					</div>
@@ -45,12 +46,46 @@
 			</div>
 		</div>
 		
+		<div class="modal fade savemanager" tabindex="-1" role="dialog" aria-labelledby="saveManagerLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<h2 style='text-align: center;'>Save</h2>
+					<hr>
+					<div class="row">
+						<div class="col-12">
+							<center>
+								<input type="text" class="mapname" name="mapname" placeholder="Enter Map Name" />
+								<button class="btn btn-success" onclick="saveMap();">Save</button>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		<script>
 			$(".tilemanager").on('shown.bs.modal', function(e) {
-				$(".tileitemcontainer").html("Teeeeest");
+				$(".tileitemcontainer").html("");
 				// Add all of the tiles.
-				
+				for(var i = 0; i < loadedTextures.length; i++) {
+					if(loadedTextures[i] !== null) {
+						// There is a texture in this location.
+						var loadedTexture = loadedTextures[i];
+						$(".tileitemcontainer").append("<div class='col-4' style='cursor:pointer;' onclick='selectedTileId = " + loadedTexture.id + "; $(\".tilemanager\").modal(\"hide\");'><img class='col-12' src='" + loadedTexture.image.src + "'><p style='text-align: center;'>" + loadedTexture.name + ": " + loadedTexture.id + "</p></div>");
+					}
+				}
 			});
+			
+			function saveMap() {
+				if($(".mapname").val() !== "") {
+					// Send the map data and name up to the server
+					var mapDataObject = {gameMap: gameMap, gameMapWidth: gameMapWidth, gameMapHeight: gameMapHeight, gameMapName: $(".mapname").val()};
+					console.log("Saving... Object: ");
+					console.log(mapDataObject);
+				} 
+				
+				$(".savemanager").modal("hide");
+			}
 		</script>
 	</body>
 </html>
