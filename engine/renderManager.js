@@ -43,6 +43,25 @@ function render() {
 	
 	// Render the player
 	// c.drawImage(loadedTextures[99].image, (WIDTH / 2) - (tileSize / 2), (HEIGHT / 2) - (tileSize / 2));
+	
+	c.fillStyle = "white";
+	c.font = "30px sans-serif";
+	// Render on instructions
+	if(pressedKeys[70]) {
+		c.fillText("Press [Q] to set tile to selected tile", 10, 30);
+		c.fillText("Press [E] to set tile to air", 10, 60);
+		c.fillText("Press [R] to open tile manager", 10, 90);
+		c.fillText("Press [T] to save map", 10, 120);
+		c.fillText("Press [G] to start fresh", 10, 150);
+		
+		c.fillText("Hold [W] to move up", 10, 180);
+		c.fillText("Hold [A] to move left", 10, 210);
+		c.fillText("Hold [S] to move down", 10, 240);
+		c.fillText("Hold [D] to move right", 10, 270);
+		c.fillText("Hold [SHIFT] to fast-move", 10, 300);
+	} else {
+		c.fillText("Hold [F] for key maps", 10, 30);
+	}
 }
 
 // Load Page //
