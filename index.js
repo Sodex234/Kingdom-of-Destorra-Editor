@@ -6,7 +6,7 @@ const url = require("url");
 
 let win;
 
-var showDev = false;
+var showDev = true;
 
 function createWindow() {
 	win = new BrowserWindow({

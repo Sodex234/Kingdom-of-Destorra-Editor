@@ -59,8 +59,10 @@ function render() {
 		c.fillText("Hold [S] to move down", 10, 240);
 		c.fillText("Hold [D] to move right", 10, 270);
 		c.fillText("Hold [SHIFT] to fast-move", 10, 300);
+		c.fillText("Selected Tile: AIR", 10, 360);
 	} else {
 		c.fillText("Hold [F] for key maps", 10, 30);
+		c.fillText("Selected Tile: AIR", 10, 90);
 	}
 }
 

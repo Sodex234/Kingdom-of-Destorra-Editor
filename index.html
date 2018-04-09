@@ -6,11 +6,13 @@
 		<link rel="stylesheet" href="main.css" />
 		
 		<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+		<link href="css/bootstrap.css" rel="stylesheet">
 		
 		<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
 		
 		<!-- Libs !-->
 		<script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
 		
 		<!-- Game Scripts !-->
 		<script type="text/javascript" src="engine/textureManager.js"></script>
@@ -30,5 +32,25 @@
 	</head>
 	<body>
 		<canvas id="gameCanvas"></canvas>
+		
+		<!-- Boostrap !-->
+		<div class="modal fade tilemanager" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<p><b>Tiles</b></p>
+					<div class="row tileitemcontainer">
+						<p>Loading...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			$(".tilemanager").on('shown.bs.modal', function(e) {
+				$(".tileitemcontainer").html("Teeeeest");
+				// Add all of the tiles.
+				
+			});
+		</script>
 	</body>
 </html>
