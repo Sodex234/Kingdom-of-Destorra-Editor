@@ -1,0 +1,16 @@
+{
+	"name": "MapName",
+	"mapid": 1,
+	"author": "Author",
+	"spawnlocs": [],
+	"tiles": [
+		{
+			"id": 1,
+			"filename": "grass"
+		},
+		{
+			"id": 2,
+			"filename": "plank"
+		}
+	]
+}

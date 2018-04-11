@@ -27,7 +27,7 @@
             if (window.module) 
                 module = window.module;
             
-            const {ipcRenderer} = require('electron');
+			var ipcRenderer = require('electron').ipcRenderer;
         </script>
 	</head>
 	<body>
@@ -82,9 +82,15 @@
 					var mapDataObject = {gameMap: gameMap, gameMapWidth: gameMapWidth, gameMapHeight: gameMapHeight, gameMapName: $(".mapname").val()};
 					console.log("Saving... Object: ");
 					console.log(mapDataObject);
+					
+					ipcRenderer.send('save', mapDataObject);
 				} 
 				
 				$(".savemanager").modal("hide");
+			}
+			
+			function openMap() {
+				
 			}
 		</script>
 	</body>

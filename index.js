@@ -3,10 +3,14 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require("path");
 const url = require("url");
+const fs = require("fs");
+const mkdirp = require("mkdirp");
+
+var ipcMain = electron.ipcMain;
 
 let win;
 
-var showDev = true;
+var showDev = false;
 
 function createWindow() {
 	win = new BrowserWindow({
@@ -30,6 +34,37 @@ function createWindow() {
 		win = null;
 	});
 }
+
+ipcMain.on('save', function(event, saveData) {
+	// Save to the file system
+	var savedContent = "";
+	
+	console.log(saveData);
+	console.log("Game map size: " + saveData.gameMap.length);
+	
+	var gameMapString = saveData.gameMap.toString().trim().split("\n").join("");
+	
+	console.log("Game map string: " + saveData.gameMap.toString());
+	
+	for(var i = 0; i < saveData.gameMap.length / saveData.gameMapWidth; i++) {
+		savedContent += saveData.gameMap.toString().substring(i * saveData.gameMapWidth * 2, (i + 1) * saveData.gameMapWidth * 2) + "\n";
+	}
+	
+	//savedContent = savedContent.substring(0, savedContent.length - 1);
+	
+	console.log("Output: ");
+	console.log(savedContent);
+	
+	mkdirp("maps/" + saveData.gameMapName, function(err) {});
+	
+	fs.writeFile("maps/" + saveData.gameMapName + "/map.txt", savedContent, function(err) {
+		if(err) {
+			return console.log(err);
+		}
+		
+		console.log("Saved map.");
+	});
+});
 
 app.on("ready", createWindow);
 
